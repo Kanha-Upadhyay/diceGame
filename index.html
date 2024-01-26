@@ -11,6 +11,16 @@
 
 <body>
   <main>
+    <div class="rules hidden">
+      <button class="close-modal">&times;</button>
+      <p>
+
+        If you get 1 in the dice ,your score will be reset .
+        If you want to pass to second person and want to save your score press HOLD.
+        First who score 20 Wins the Game.
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
     <section class="player player--0 player--active">
       <h2 class="name" id="name--0">Player 1</h2>
       <p class="score" id="score--0">43</p>
@@ -32,6 +42,8 @@
     <button class="btn btn--new">🔄 New game</button>
     <button class="btn btn--roll">🎲 Roll dice</button>
     <button class="btn btn--hold">📥 Hold</button>
+    <button class="btn--htp">📥 How to Play</button>
+
   </main>
   <script src="script.js"></script>
 </body>

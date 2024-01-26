@@ -11,6 +11,12 @@ const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+
+const HTP = document.querySelector('.rules');
+const overlay = document.querySelector('.overlay');
+const closebtn = document.querySelector('.close-modal');
+const Openbtn = document.querySelector('.btn--htp');
+
 let score, activePlayer, currentScore, playing;
 
 const init = function () {
@@ -30,10 +36,21 @@ const init = function () {
 
   player0El.classList.remove('player--winner');
   player1El.classList.remove('player--winner');
-  player0El.classList.add('active--player');
-  player1El.classList.remove('acitve-palyer');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('palyer--active');
 };
 
+const HowToPlay = function () {
+  HTP.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+const closeHTP = function () {
+  HTP.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+init();
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   currentScore = 0;
@@ -42,7 +59,6 @@ const switchPlayer = function () {
   player1El.classList.toggle('player--active');
 };
 
-init();
 //DICE ROLL FUNCTIONALITY
 btnRoll.addEventListener('click', function () {
   if (playing == true) {
@@ -93,3 +109,5 @@ btnHold.addEventListener('click', function () {
 });
 
 btnNew.addEventListener('click', init);
+Openbtn.addEventListener('click', HowToPlay);
+closebtn.addEventListener('click', closeHTP);
